@@ -1,18 +1,22 @@
 #include "main.h"
 
 /**
- * _memest: fills memory with constant byte
- * @s: memory area
- * @b: bytes
- * @n: number of bytes
+ * _memcpy - copies n bytes from src to dest
+ * @dest: the place we copy to
+ * @src: we copy from
+ * @n: how much we copy
  *
- * Return: ponlinter to s
+ * Return: pointer to dest
  */
-
-char *_memest(char *s, char b, unsigned int n)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-char *ptr = s;
-while (n-- > 0)
-*ptr++ = b;
-return (s);
+	char *ptr = dest;
+
+	while (n-- > 0)
+	{
+		*dest = *src;
+		dest++;
+		src++;
+	}
+	return (dest);
 }
